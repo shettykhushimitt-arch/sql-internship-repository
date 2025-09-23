@@ -1,3 +1,4 @@
+-- inserting values to the author table
 insert into author
 (name,bio)
 values
@@ -7,9 +8,11 @@ values
 ("Nikhil",NULL),
 ("tharun",null);
 
-
+-- this query will help to view our author table
 select * from author;
 
+
+-- inserting values to the book table  where copies are Explicitly specified(here copies are default type)
 insert into book
 (title,author_id,publisher,year,isbn,copies)
 values
@@ -17,7 +20,8 @@ values
 ('1984', 2, 'Secker & Warburg', 1949, '9780451524935', 5),
 ('Rest in Peace',1,'Bloomsbury', 1997, '9780747532743', 10),
 ('Gemini AI',5,'Elon Mush',2024,34857845789478,1);
-    
+
+-- inserting values to the book table where it  omit copies
 insert into book
 (title,author_id,publisher,year,isbn)
 values
@@ -28,6 +32,7 @@ values
 
 select * from book;
 
+-- inserting member values and handling NULL values
 insert into member
 (name,email,phone,join_date )
 values
@@ -37,6 +42,7 @@ values
 
 select * from member;
 
+-- inserting loan values and handling NULL values
 insert into loan
 (book_id,member_id,loan_date,due_date,return_date)
 values
@@ -44,11 +50,15 @@ values
   (2, 2, '2025-09-22', '2025-09-29', NULL),
   (3, 3, '2025-09-23', '2025-09-30', NULL);
   
-  
+  -- update command
   update loan set return_date='2025-09-23' where return_date is NULL and book_id =1;
+-- viewing my table whether it is updated 
   select * from loan;
   update member set email='kavyaba@gmail.com' where email='kavya@gmail.com';
-  
+
+
+-- deleting the rows
+-- (since i cannot delete phone in the member table directly, because the member_id from loan table is referring member_id from member table )
   delete from member where phone is NULL;
   delete from loan where member_id = 2;
    delete from member where member_id = 2;
