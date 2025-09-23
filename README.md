@@ -28,7 +28,9 @@ primary keys:
   foreign keys:
   book.author_id (refers)→ author.author_id
   loan.book_id (refers)→ book.book_id
-  loan.member_id(refers) → member.member_id                                                                                                                            
+  loan.member_id(refers) → member.member_id                                                                                                  
+
+  ___________________________________________________________________________________________________________________________________________
 
   Task2:
   1)inserting values to the tables author,book,member,loan
@@ -43,4 +45,14 @@ primary keys:
   update member
    set phone = '1122334455'
    here i have not used where condition , therefore it update's everybody's phone number.
-   4)delete command , will delete the existing rows.
+   4)delete command , will delete the existing rows. make sure that the row you are deleting of that particular table is not being referred by other table through foreign keys.
+   example:
+   delete from member where phone is NULL;
+ --  i cannot delete phone row because member_id from member table is being refreed by member_id from loan table. -- 
+  delete from loan where member_id = 2;
+   delete from member where member_id = 2;
+    delete from member where phone is NULL;
+    select * from loan;
+    
+    
+    ______________________________________________________________________________________________________________________________________
