@@ -34,8 +34,11 @@ primary keys:
 
   Task2:
   1)inserting values to the tables author,book,member,loan
+  
   2) to display the tables using select * folllowed by table_name;
-  3)updating the table values using where condition , if not used where condition it will update the values of entire table.
+
+  3)updating the table values using where condition , if not used where condition it will update the values of entire table
+  
   example 1 :
   update member
    set phone = '1122334455'
