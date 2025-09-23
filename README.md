@@ -42,20 +42,27 @@ primary keys:
   example 1 :
   update member
    set phone = '1122334455'
-   WHERE name = 'Kavya';
-   here it will only update Kavya's phone number.
+   WHERE name = 'Kavya'; 
+   
+   (here it will only update Kavya's phone number.)
+   
    example 2 :
   update member
    set phone = '1122334455'
-   here i have not used where condition , therefore it update's everybody's phone number.
-   4)delete command , will delete the existing rows. make sure that the row you are deleting of that particular table is not being referred by other table through foreign keys.
-   example:
+   
+   (here i have not used where condition , therefore it update's everybody's phone number.)
+
+   
+   4)delete command , will delete the existing rows. make sure that the row you are deleting of that particular table is not being              referred by other table through foreign keys.
+    example:
    delete from member where phone is NULL;
+   
  --  i cannot delete phone row because member_id from member table is being refreed by member_id from loan table. -- 
-  delete from loan where member_id = 2;
-   delete from member where member_id = 2;
-    delete from member where phone is NULL;
-    select * from loan;
+ 
+     delete from loan where member_id = 2;
+     delete from member where member_id = 2;
+     delete from member where phone is NULL;
+     select * from loan;
     
     
     ______________________________________________________________________________________________________________________________________
