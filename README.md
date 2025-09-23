@@ -47,7 +47,8 @@ primary keys:
    (here it will only update Kavya's phone number.)
    
    example 2 :
-  update member
+   
+   update member
    set phone = '1122334455'
    
    (here i have not used where condition , therefore it update's everybody's phone number.)
