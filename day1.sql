@@ -37,7 +37,7 @@ join_date date not null
 
 -- creating table for loan
 create table loan(
-load_id int auto_increment primary key,
+loan_id int auto_increment primary key,
 book_id int,
 foreign key(book_id) references book(book_id),
 member_id int,
