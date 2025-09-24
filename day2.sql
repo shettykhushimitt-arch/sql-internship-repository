@@ -19,7 +19,7 @@ values
 ('Pride and Prejudice',3,'T. Egerton',1990,'9780141439518', 3),
 ('1984', 2, 'Secker & Warburg', 1949, '9780451524935', 5),
 ('Rest in Peace',1,'Bloomsbury', 1997, '9780747532743', 10),
-('Gemini AI',5,'Elon Mush',2024,34857845789478,1);
+('Gemini AI',5,'Elon Mush',2024,'34857845789478',1);
 
 -- inserting values to the book table where it  omit copies
 insert into book
@@ -28,7 +28,7 @@ values
 ('Pride and Prejudice',3,'T. Egerton',1990,'9780141439518' ),
 ('1984', 2, 'Secker & Warburg', 1949, '9780451524935' ),
 ('Rest in Peace',1,'Bloomsbury', 1997, '9780747532743'),
-('Gemini AI',5,'Elon Mush',2024,34857845789478);
+('Gemini AI',5,'Elon Mush',2024,'34857845789478');
 
 select * from book;
 
@@ -38,7 +38,7 @@ insert into member
 values
 ('Kavya','kavya@gmail.com',1234567892,'2025-09-20'),
  ('Chandan', 'chandan@gmail.com', NULL, '2025-09-22'), 
-('harish', 'harish.com', '0987654321', '2025-09-21');
+('harish', 'harish@gmail.com', '0987654321', '2025-09-21');
 
 select * from member;
 
@@ -58,13 +58,11 @@ values
 
 
 -- deleting the rows
+ delete from member where phone is NULL;
 -- (since i cannot delete phone in the member table directly, because the member_id from loan table is referring member_id from member table )
-  delete from member where phone is NULL;
+ 
   delete from loan where member_id = 2;
    delete from member where member_id = 2;
     delete from member where phone is NULL;
     select * from loan;
   
-  
-  
-
